@@ -4,4 +4,4 @@ Public-facing tool for accessing IRB-approved short form consent documents for e
 
 Maintained by the Office of the IRB, Boston Medical Center / Boston University Medical Campus.
 
-For questions about short form use, contact irb@bu.edu or consult the Short Form Processing SOP.
+For questions about short form use, contact medirb@bu.edu
