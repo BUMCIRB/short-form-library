@@ -154,16 +154,19 @@
   var input = document.getElementById("lang-search");
   var countEl = document.getElementById("search-count");
   var noResults = document.getElementById("no-results");
-  var total = langs.length;
+  // +1 for the English reference row, which is markup rather than a langs[] entry.
+  var total = langs.length + 1;
 
   function updateCount(shown) {
-    countEl.textContent = "Showing " + shown + " of " + total + " languages";
+    // On a no-match search the "No languages match your search." banner carries
+    // the message, so the counter stays quiet rather than repeating it.
+    countEl.textContent = shown === 0 ? "" : "Showing " + shown + " of " + total + " languages";
   }
   updateCount(total);
 
   input.addEventListener("input", function() {
     var q = this.value.trim().toLowerCase();
-    var rows = list.querySelectorAll(".form-row:not(.english)");
+    var rows = list.querySelectorAll(".form-row");
     var shown = 0;
     rows.forEach(function(row) {
       var en = row.getAttribute("data-lang");
