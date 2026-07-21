@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Short Form Consent Library – BMC/BUMC IRB</title>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; background: #FFFFFF; color: #333333; }
+  a { color: #0F69D7; text-decoration: underline; }
+  a:hover { text-decoration: none; }
+  a:visited { color: #5B2D8E; }
+
+  .page { max-width: 840px; margin: 0 auto; padding: 40px 24px 80px; }
+
+  .header { margin-bottom: 32px; }
+  .header h1 { font-size: 26px; line-height: 32px; font-weight: 700; color: #000000; margin-bottom: 12px; }
+  .header p { font-size: 15px; line-height: 26px; color: #555555; }
+
+  .notice { background: #FFF8E1; border: 1px solid #E6D590; padding: 14px 18px; margin-bottom: 28px; font-size: 14px; line-height: 22px; color: #6B5900; }
+  .notice strong { font-weight: 600; }
+
+  .process-note { background: #F5F5F5; border-left: 3px solid #CC0000; padding: 14px 18px; margin-bottom: 32px; font-size: 14px; line-height: 22px; color: #555555; }
+
+  .search-section { margin-bottom: 16px; }
+  .search-section label { display: block; font-size: 15px; font-weight: 600; color: #000000; margin-bottom: 6px; }
+  .search-section input {
+    display: block; width: 100%; max-width: 400px;
+    border: 1px solid #CCCCCC; border-radius: 0; padding: 9px 12px;
+    font-family: inherit; font-size: 15px; line-height: 22px;
+    color: #333333; background: #FFFFFF; outline: none;
+  }
+  .search-section input:focus { border-color: #0F69D7; }
+  .search-count { font-size: 12px; color: #999999; margin-top: 6px; }
+
+  .form-list { border-top: 1px solid #DDDDDD; border-left: 1px solid #DDDDDD; }
+  .form-row {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px;
+    padding: 11px 14px;
+    border-right: 1px solid #DDDDDD; border-bottom: 1px solid #DDDDDD;
+    background: #FFFFFF;
+  }
+  .form-row.english { background: #F1F1EF; }
+  .form-row.hidden { display: none; }
+
+  .pdf-icon { flex: none; width: 24px; height: 22px; }
+  .form-link { font-size: 15px; line-height: 22px; }
+  .dot { color: #CCCCCC; font-size: 12px; }
+  .native-name { font-size: 15px; line-height: 22px; color: #555555; }
+  .version { font-size: 12px; line-height: 18px; color: #999999; }
+
+  .no-results {
+    padding: 16px 14px; font-size: 15px; color: #555555;
+    border-right: 1px solid #DDDDDD; border-bottom: 1px solid #DDDDDD;
+    display: none;
+  }
+
+  .footer {
+    margin-top: 40px; padding-top: 20px; border-top: 1px solid #DDDDDD;
+    font-size: 13px; line-height: 20px; color: #999999;
+  }
+
+  @media (max-width: 600px) {
+    .page { padding: 24px 16px 60px; }
+    .header h1 { font-size: 22px; line-height: 28px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+  <div class="header">
+    <h1>Short Form Consent Process for Subjects with Limited English Proficiency</h1>
+    <p>Use this page to download translated short form consent documents for enrolling research participants who have limited English proficiency.</p>
+  </div>
+
+  <div class="notice">
+    <strong>Don't see the language you need?</strong> Certified translations are not available for every language. If you need a short form in a language not listed here, contact the IRB at <a href="mailto:irb@bu.edu">irb@bu.edu</a> to discuss options.
+  </div>
+
+  <div class="process-note">
+    <strong>Before using a short form,</strong> review the <a href="https://www.bumc.bu.edu/ohra/hrpp-policies/hrpp-policies-procedures/" target="_blank" rel="noopener">Short Form Processing SOP</a> for required procedures, including interpreter qualifications and witness requirements. The English version is included below as a reference copy only and is not for use with participants.
+  </div>
+
+  <div class="search-section">
+    <label for="lang-search">Search for a language</label>
+    <input id="lang-search" type="text" placeholder="e.g., Spanish, Arabic, Cambodian..." autocomplete="off">
+    <div class="search-count" id="search-count"></div>
+  </div>
+
+  <div class="form-list" id="form-list">
+    <div class="form-row english" data-lang="english" data-native="english">
+      <svg class="pdf-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 22"><path fill="#E4E2DE" stroke="#B9B9B9" d="M3.5 1.5h11l6 6v13h-17v-19z"/><path fill="#CFCFCF" stroke="#B9B9B9" d="M14.5 1.5l6 6h-6z"/><rect x="2" y="12" width="16" height="8" rx="1" fill="#CC0000"/><text x="10" y="18.2" font-family="Helvetica,Arial,sans-serif" font-size="5.4" font-weight="700" fill="#FFF" text-anchor="middle" letter-spacing="0.2">PDF</text></svg>
+      <a class="form-link" href="forms/BMC_ShortForm_English_v1.0_FILLABLE.pdf" target="_blank">Short Form – English (reference copy, not for use with participants)</a>
+      <span class="dot">&middot;</span>
+      <span class="version">v1.0 · July 2026</span>
+    </div>
+  </div>
+
+  <div class="no-results" id="no-results">No languages match your search.</div>
+
+  <div class="footer">
+    Office of the IRB · Boston Medical Center / Boston University Medical Campus · <a href="mailto:irb@bu.edu">irb@bu.edu</a>
+  </div>
+</div>
+
+<script>
+(function() {
+  // Languages match the actual files in forms/. "search" field adds extra
+  // terms the filter should match beyond the visible label (e.g., Khmer, Persian).
+  var langs = [
+    { label: "Albanian", native: "Shqip", file: "BMC_ShortForm_Albanian_v1.0_FILLABLE.pdf", search: "" },
+    { label: "Amharic", native: "\u12A0\u121B\u122D\u129B", file: "BMC_ShortForm_Amharic_v1.0_FILLABLE.pdf", search: "" },
+    { label: "Arabic", native: "\u0627\u0644\u0639\u0631\u0628\u064A\u0629", file: "BMC_ShortForm_Arabic_v1.0_FILLABLE.pdf", search: "" },
+    { label: "Bulgarian", native: "\u0411\u044A\u043B\u0433\u0430\u0440\u0441\u043A\u0438", file: "BMC_ShortForm_Bulgarian_v1.0_FILLABLE.pdf", search: "" },
+    { label: "Burmese", native: "\u1019\u103C\u1014\u103A\u1019\u102C", file: "BMC_ShortForm_Burmese_v1.0_FILLABLE.pdf", search: "myanmar" },
+    { label: "Cambodian (Khmer)", native: "\u1781\u17D2\u1798\u17C2\u179A", file: "BMC_ShortForm_Cambodian_v1.0_FILLABLE.pdf", search: "khmer cambodian" },
+    { label: "Chinese (Simplified)", native: "\u7B80\u4F53\u4E2D\u6587", file: "BMC_ShortForm_Chinese_Simplified_v1.0_FILLABLE.pdf", search: "mandarin" },
+    { label: "Chinese (Traditional)", native: "\u7E41\u9AD4\u4E2D\u6587", file: "BMC_ShortForm_Chinese_Traditional_v1.0_FILLABLE.pdf", search: "mandarin cantonese" },
+    { label: "Farsi", native: "\u0641\u0627\u0631\u0633\u06CC", file: "BMC_ShortForm_Farsi_v1.0_FILLABLE.pdf", search: "persian dari" },
+    { label: "French", native: "Fran\u00E7ais", file: "BMC_ShortForm_French_v1.0_FILLABLE.pdf", search: "" },
+    { label: "Greek", native: "\u0395\u03BB\u03BB\u03B7\u03BD\u03B9\u03BA\u03AC", file: "BMC_ShortForm_Greek_v1.0_FILLABLE.pdf", search: "" },
+    { label: "Haitian Creole", native: "Krey\u00F2l Ayisyen", file: "BMC_ShortForm_Haitian_Creole_v1.0_FILLABLE.pdf", search: "" },
+    { label: "Hindi", native: "\u0939\u093F\u0928\u094D\u0926\u0940", file: "BMC_ShortForm_Hindi_v1.0_FILLABLE.pdf", search: "" },
+    { label: "Polish", native: "Polski", file: "BMC_ShortForm_Polish_v1.0_FILLABLE.pdf", search: "" },
+    { label: "Portuguese", native: "Portugu\u00EAs", file: "BMC_ShortForm_Portuguese_v1.0_FILLABLE.pdf", search: "" },
+    { label: "Romanian", native: "Rom\u00E2n\u0103", file: "BMC_ShortForm_Romanian_v1.0_FILLABLE.pdf", search: "" },
+    { label: "Russian", native: "\u0420\u0443\u0441\u0441\u043A\u0438\u0439", file: "BMC_ShortForm_Russian_v1.0_FILLABLE.pdf", search: "" },
+    { label: "Spanish", native: "Espa\u00F1ol", file: "BMC_ShortForm_Spanish_v1.0_FILLABLE.pdf", search: "" },
+    { label: "Swahili", native: "Kiswahili", file: "BMC_ShortForm_Swahili_v1.0_FILLABLE.pdf", search: "" },
+    { label: "Tigrinya", native: "\u1275\u130D\u122D\u129B", file: "BMC_ShortForm_Tigrinya_v1.0_FILLABLE.pdf", search: "" },
+    { label: "Vietnamese", native: "Ti\u1EBFng Vi\u1EC7t", file: "BMC_ShortForm_Vietnamese_v1.0_FILLABLE.pdf", search: "" }
+  ];
+
+  var list = document.getElementById("form-list");
+  var svgIcon = '<svg class="pdf-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 22"><path fill="#E4E2DE" stroke="#B9B9B9" d="M3.5 1.5h11l6 6v13h-17v-19z"/><path fill="#CFCFCF" stroke="#B9B9B9" d="M14.5 1.5l6 6h-6z"/><rect x="2" y="12" width="16" height="8" rx="1" fill="#CC0000"/><text x="10" y="18.2" font-family="Helvetica,Arial,sans-serif" font-size="5.4" font-weight="700" fill="#FFF" text-anchor="middle" letter-spacing="0.2">PDF</text></svg>';
+
+  langs.forEach(function(lang) {
+    var row = document.createElement("div");
+    row.className = "form-row";
+    row.setAttribute("data-lang", lang.label.toLowerCase());
+    row.setAttribute("data-native", lang.native.toLowerCase());
+    row.setAttribute("data-search", (lang.search || "").toLowerCase());
+    row.innerHTML = svgIcon +
+      '<a class="form-link" href="forms/' + encodeURIComponent(lang.file) + '" target="_blank">Short Form \u2013 ' + lang.label + ' (fillable PDF)</a>' +
+      '<span class="dot">\u00b7</span>' +
+      '<span class="native-name">' + lang.native + '</span>' +
+      '<span class="dot">\u00b7</span>' +
+      '<span class="version">v1.0 \u00b7 July 2026</span>';
+    list.appendChild(row);
+  });
+
+  var input = document.getElementById("lang-search");
+  var countEl = document.getElementById("search-count");
+  var noResults = document.getElementById("no-results");
+  var total = langs.length;
+
+  function updateCount(shown) {
+    countEl.textContent = "Showing " + shown + " of " + total + " languages";
+  }
+  updateCount(total);
+
+  input.addEventListener("input", function() {
+    var q = this.value.trim().toLowerCase();
+    var rows = list.querySelectorAll(".form-row:not(.english)");
+    var shown = 0;
+    rows.forEach(function(row) {
+      var en = row.getAttribute("data-lang");
+      var native_ = row.getAttribute("data-native");
+      var extra = row.getAttribute("data-search");
+      var match = !q || en.indexOf(q) !== -1 || native_.indexOf(q) !== -1 || (extra && extra.indexOf(q) !== -1);
+      row.classList.toggle("hidden", !match);
+      if (match) shown++;
+    });
+    updateCount(shown);
+    noResults.style.display = shown === 0 ? "block" : "none";
+  });
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,11 @@
+# Accidental duplicate copy of this project nested inside itself.
+# Not part of the site; excluded so it is not published.
+/irb-short-form-library/
+
+# Internal build/handoff instructions - not for the public site.
+/CLAUDE.md
+
+# OS cruft
+Thumbs.db
+.DS_Store
+desktop.ini
