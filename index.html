@@ -3,112 +3,182 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Short Form Consent Library – BMC/BUMC IRB</title>
+<title>Short Form Consent Process – BMC/BUMC IRB</title>
 <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; background: #FFFFFF; color: #333333; }
+  body { font-family: 'Libre Franklin', Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; background: #FFFFFF; color: #555555; }
   a { color: #0F69D7; text-decoration: underline; }
   a:hover { text-decoration: none; }
-  a:visited { color: #5B2D8E; }
+  a:visited { color: #7337AF; }
 
-  .page { max-width: 840px; margin: 0 auto; padding: 40px 24px 80px; }
+  .page { max-width: 760px; margin: 0 auto; padding: 44px 24px 90px; }
 
-  .header { margin-bottom: 32px; }
-  .header h1 { font-size: 26px; line-height: 32px; font-weight: 700; color: #000000; margin-bottom: 12px; }
-  .header p { font-size: 15px; line-height: 26px; color: #555555; }
+  h1 { font-size: 28px; line-height: 32px; font-weight: 700; color: #000000; margin-bottom: 14px; }
+  h2 { font-size: 25px; line-height: 29px; font-weight: 700; color: #000000; margin: 40px 0 12px; }
+  p { font-size: 16px; line-height: 28px; margin-bottom: 16px; }
+  .lead { margin-bottom: 6px; }
+  .jump { margin-bottom: 24px; }
+  .policy-link { margin: 14px 0 0; }
 
-  .notice { background: #FFF8E1; border: 1px solid #E6D590; padding: 14px 18px; margin-bottom: 28px; font-size: 14px; line-height: 22px; color: #6B5900; }
-  .notice strong { font-weight: 600; }
+  ol { padding-left: 22px; font-size: 16px; line-height: 28px; margin-bottom: 4px; }
+  ol li { margin-bottom: 8px; }
 
-  .process-note { background: #F5F5F5; border-left: 3px solid #CC0000; padding: 14px 18px; margin-bottom: 32px; font-size: 14px; line-height: 22px; color: #555555; }
+  .warning-box { background: #F0F0F0; border: 1px solid #DDDDDD; padding: 20px 22px; margin-bottom: 8px; }
+  .warning-box .head { font-size: 16px; line-height: 22px; font-weight: 700; color: #CC0000; margin-bottom: 10px; }
+  .warning-box p { margin: 0; }
 
-  .search-section { margin-bottom: 16px; }
-  .search-section label { display: block; font-size: 15px; font-weight: 600; color: #000000; margin-bottom: 6px; }
-  .search-section input {
-    display: block; width: 100%; max-width: 400px;
-    border: 1px solid #CCCCCC; border-radius: 0; padding: 9px 12px;
-    font-family: inherit; font-size: 15px; line-height: 22px;
-    color: #333333; background: #FFFFFF; outline: none;
+  table { width: 100%; border-collapse: collapse; margin: 4px 0; }
+  th { text-align: left; font-size: 13px; line-height: 18px; font-weight: 700; color: #000000; background: #F0F0F0; border: 1px solid #DDDDDD; padding: 9px 12px; }
+  th.situation { width: 42%; }
+  td { border: 1px solid #DDDDDD; padding: 11px 12px; font-size: 16px; line-height: 26px; color: #555555; vertical-align: top; }
+
+  hr { border: none; border-top: 1px solid #DDDDDD; margin: 44px 0 0; }
+
+  .library-intro { margin-bottom: 20px; }
+
+  .search-label { display: block; font-size: 16px; line-height: 20px; font-weight: 700; color: #000000; margin-bottom: 8px; }
+  .search-input {
+    display: block; width: 100%; max-width: 420px; box-sizing: border-box;
+    border: 1px solid #DDDDDD; border-radius: 0; padding: 9px 12px;
+    font-family: inherit; font-size: 16px; line-height: 24px; color: #555555; background: #FFFFFF; outline: none;
   }
-  .search-section input:focus { border-color: #0F69D7; }
-  .search-count { font-size: 12px; color: #999999; margin-top: 6px; }
+  .search-input:focus { border-color: #0F69D7; }
+  .search-count { font-size: 12.8px; line-height: 18px; color: #9F9F9F; margin: 8px 0 16px; }
 
   .form-list { border-top: 1px solid #DDDDDD; border-left: 1px solid #DDDDDD; }
   .form-row {
     display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px;
-    padding: 11px 14px;
+    padding: 11px 14px; background: #FEFFFD;
     border-right: 1px solid #DDDDDD; border-bottom: 1px solid #DDDDDD;
-    background: #FFFFFF;
   }
   .form-row.english { background: #F1F1EF; }
   .form-row.hidden { display: none; }
-
-  .pdf-icon { flex: none; width: 24px; height: 22px; }
-  .form-link { font-size: 15px; line-height: 22px; }
-  .dot { color: #CCCCCC; font-size: 12px; }
-  .native-name { font-size: 15px; line-height: 22px; color: #555555; }
-  .version { font-size: 12px; line-height: 18px; color: #999999; }
-
+  .pdf-icon { flex: none; width: 24px; height: 22px; display: block; }
+  .form-link { font-size: 16px; line-height: 24px; }
+  .dot { color: #9F9F9F; font-size: 12.8px; }
+  .native-name { font-size: 16px; line-height: 24px; color: #555555; }
+  .version { font-size: 12.8px; line-height: 20px; color: #9F9F9F; }
   .no-results {
-    padding: 16px 14px; font-size: 15px; color: #555555;
+    grid-column: 1 / -1; padding: 16px 14px; background: #FEFFFD;
     border-right: 1px solid #DDDDDD; border-bottom: 1px solid #DDDDDD;
-    display: none;
+    font-size: 16px; line-height: 24px; color: #555555; display: none;
   }
 
-  .footer {
-    margin-top: 40px; padding-top: 20px; border-top: 1px solid #DDDDDD;
-    font-size: 13px; line-height: 20px; color: #999999;
-  }
+  .callouts { display: flex; flex-wrap: wrap; gap: 20px; margin-top: 24px; }
+  .callout { flex: 1; min-width: 260px; background: #F0F0F0; border: 1px solid #DDDDDD; padding: 18px 20px; }
+  .callout .head { margin-bottom: 8px; font-size: 16px; line-height: 20px; font-weight: 700; color: #000000; }
+  .callout p { margin: 0; }
+
+  .footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid #DDDDDD; font-size: 13px; line-height: 20px; color: #9F9F9F; }
 
   @media (max-width: 600px) {
-    .page { padding: 24px 16px 60px; }
-    .header h1 { font-size: 22px; line-height: 28px; }
+    .page { padding: 28px 16px 70px; }
+    h1 { font-size: 24px; line-height: 28px; }
+    h2 { font-size: 21px; line-height: 25px; }
   }
 </style>
 </head>
 <body>
 
 <div class="page">
-  <div class="header">
-    <h1>Short Form Consent Process for Subjects with Limited English Proficiency</h1>
-    <p>Use this page to download translated short form consent documents for enrolling research participants who have limited English proficiency.</p>
+
+  <h1>Short Form Consent Process for Subjects with Limited English Proficiency</h1>
+  <p class="lead">Use this page to download translated short form consent documents for enrolling incidental, unanticipated research participants who have limited English proficiency.</p>
+  <p class="jump"><a href="#library">Go to the short form library &#8595;</a></p>
+
+  <div class="warning-box">
+    <p class="head">Your study must be approved to use the short form consent process.</p>
+    <p>Approval covers every language for which the IRB maintains a pre-translated short form in its library, except any language the IRB excluded and named in your approval letter. Check your approval letter before you download. Use of the short form on a study that was not approved for it is noncompliant and must be reported promptly to the IRB.</p>
   </div>
 
-  <div class="notice">
-    <strong>Don't see the language you need?</strong> Certified translations are not available for every language. If you need a short form in a language not listed here, contact the IRB at <a href="mailto:irb@bu.edu">irb@bu.edu</a> to discuss options.
-  </div>
+  <h2>How approval works</h2>
+  <p>The IRB may approve the short form written consent process for obtaining consent from incidental, unanticipated potential subjects with limited English proficiency. When enrollment of subjects with limited English proficiency is anticipated, a full translated consent form is used instead. Approval to use the short form process is granted at the study level: when the IRB approves your protocol for the short form process, that approval covers all languages for which the IRB maintains a pre-translated short form in the library below. You are not required to specify individual languages in advance.</p>
+  <p>The IRB may exclude specific languages from short form approval when enrollment of subjects speaking those languages is anticipated at your site; those excluded languages are named in your approval letter and require a full translated consent form instead. If you encounter a subject whose language is not available in the library, you must obtain a certified translation of the short form and submit it for IRB approval before use.</p>
+  <p class="policy-link"><a href="https://www.bumc.bu.edu/ohra/hrpp-policies/hrpp-policies-procedures/#8.4.5.2" target="_blank" rel="noopener">See the governing policy: Use of Short Form Consent Process (HRPP Policy §8.4.5.2)</a></p>
 
-  <div class="process-note">
-    <strong>Before using a short form,</strong> review the <a href="https://www.bumc.bu.edu/ohra/hrpp-policies/hrpp-policies-procedures/" target="_blank" rel="noopener">Short Form Processing SOP</a> for required procedures, including interpreter qualifications and witness requirements. The English version is included below as a reference copy only and is not for use with participants.
-  </div>
+  <h2>Running the consent encounter</h2>
+  <p>The consent process must be verbally translated into a language understandable to the subject, using a qualified interpreter. BMC Interpreter Services or a contracted telephone interpreter line may be used; minors may not serve as interpreters. Complete the steps in order.</p>
+  <ol>
+    <li>Confirm the participant&rsquo;s preferred language and that a short form for it exists in the library below.</li>
+    <li>Present the short form to the subject in their language.</li>
+    <li>Using the interpreter, conduct the full consent discussion orally. Begin with the Key Information section at the start of the English consent form, then cover all remaining elements.</li>
+    <li>Allow the subject to ask questions through the interpreter, and answer them before anyone signs.</li>
+    <li>If the subject agrees to participate, obtain signatures as described under &ldquo;Who signs what.&rdquo;</li>
+    <li>Provide the subject with a signed copy of the short form in their language and the English consent form.</li>
+  </ol>
+  <p class="policy-link"><a href="https://www.bumc.bu.edu/ohra/hrpp-policies/hrpp-policies-procedures/#8.4.5.3" target="_blank" rel="noopener">See the governing policy: Witnesses and Interpreters for Subjects with Limited English Proficiency (HRPP Policy §8.4.5.3)</a></p>
 
-  <div class="search-section">
-    <label for="lang-search">Search for a language</label>
-    <input id="lang-search" type="text" placeholder="e.g., Spanish, Arabic, Cambodian..." autocomplete="off">
-    <div class="search-count" id="search-count"></div>
-  </div>
+  <h2>Who signs what</h2>
+  <p>A short form encounter produces signatures on two documents. The translated short form is signed by the subject (or legally authorized representative) and the witness. The English narrative describing the study, which is the IRB-approved English consent form unless the IRB approved a separate narrative, is signed by the witness and the person who conducted the consent discussion.</p>
+  <p>The witness must be fluent in both English and the subject&rsquo;s language, must be present for the entire oral presentation, and must be independent of the study. If the person conducting the consent discussion is also providing the verbal translation, a witness who is fluent in both languages and not otherwise associated with the study is required. An interpreter who is not associated with the study may serve as the witness. If a contracted telephone interpreter line is used, the interpreter may direct the person conducting consent to record the interpreter&rsquo;s identification number on the witness signature line in lieu of a physical signature.</p>
+  <p class="policy-link"><a href="https://www.bumc.bu.edu/ohra/hrpp-policies/hrpp-policies-procedures/#8.4.5.3" target="_blank" rel="noopener">See the governing policy: Witnesses and Interpreters (HRPP Policy §8.4.5.3)</a></p>
+
+  <h2>When a full translation becomes required</h2>
+  <p>The short form is intended for incidental, unanticipated enrollment. Depending on the study&rsquo;s risk level, continued enrollment in a language may require a full translated consent form. The two tracks below come directly from policy; the risk level of your study is stated in your approval letter.</p>
+  <table>
+    <thead>
+      <tr>
+        <th class="situation">If your study is&hellip;</th>
+        <th>Then&hellip;</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Minimal risk</td>
+        <td>The short form may be used no more than three times for the same language, unless the IRB approves otherwise. After three uses in a language, you must obtain a full translation of the IRB-approved consent form in that language and submit it for IRB approval before enrolling additional subjects who speak that language. Once approved, offer a copy of the translated consent form to active subjects previously enrolled in that language using the short form.</td>
+      </tr>
+      <tr>
+        <td>Greater than minimal risk</td>
+        <td>After any use of the short form, you must obtain a full translation of the IRB-approved consent form into the subject&rsquo;s language and submit it for IRB approval within 30 days of that subject&rsquo;s enrollment. Once approved, the translated consent form must be promptly offered to the subject. The IRB may waive or modify this requirement if a full translation would be impracticable.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="policy-link"><a href="https://www.bumc.bu.edu/ohra/hrpp-policies/hrpp-policies-procedures/#8.4.5.2" target="_blank" rel="noopener">See the governing policy: Use of Short Form Consent Process (HRPP Policy §8.4.5.2)</a></p>
+
+  <h2>Reporting and study records</h2>
+  <p>Use of the short form on a study that was not approved for it is noncompliant and must be reported promptly to the IRB. Progress reports and study status check-in reports ask whether any subjects were enrolled using the short form consent process, and if so, how many and in what languages, so the IRB can consider whether the pattern of use indicates that further enrollment of subjects with limited English proficiency should be anticipated.</p>
+  <p class="policy-link"><a href="https://www.bumc.bu.edu/ohra/hrpp-policies/hrpp-policies-procedures/#8.4.5.2" target="_blank" rel="noopener">See the governing policy: Use of Short Form Consent Process (HRPP Policy §8.4.5.2)</a></p>
+
+  <hr>
+
+  <h2 id="library" style="scroll-margin-top: 24px; margin-top: 36px;">Short Form Library</h2>
+  <p class="library-intro">Each short form is a fillable PDF and opens with a cover page of instructions for the research team, which is not distributed to subjects. Before you use a form, complete the fields at the top: principal investigator, IRB protocol number, study title, and contact phone number. In the translated versions these fields are labeled in English, so you can complete them without reading the language. Fill and print the form ahead of the consent encounter. Do not edit the translated text.</p>
+
+  <label class="search-label" for="lang-search">Search for language</label>
+  <input id="lang-search" class="search-input" type="text" placeholder="Search for language…" autocomplete="off">
+  <p class="search-count" id="search-count"></p>
 
   <div class="form-list" id="form-list">
-    <div class="form-row english" data-lang="english" data-native="english">
+    <div class="form-row english" data-lang="english" data-native="english" data-search="">
       <svg class="pdf-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 22"><path fill="#E4E2DE" stroke="#B9B9B9" d="M3.5 1.5h11l6 6v13h-17v-19z"/><path fill="#CFCFCF" stroke="#B9B9B9" d="M14.5 1.5l6 6h-6z"/><rect x="2" y="12" width="16" height="8" rx="1" fill="#CC0000"/><text x="10" y="18.2" font-family="Helvetica,Arial,sans-serif" font-size="5.4" font-weight="700" fill="#FFF" text-anchor="middle" letter-spacing="0.2">PDF</text></svg>
-      <a class="form-link" href="forms/BMC_ShortForm_English_v1.0_FILLABLE.pdf" target="_blank">Short Form – English (reference copy, not for use with participants)</a>
+      <a class="form-link" href="forms/BMC_ShortForm_English_v1.0_FILLABLE.pdf" target="_blank">Short Form &#8211; English (reference copy &#8212; not for use with participants) (fillable PDF)</a>
       <span class="dot">&middot;</span>
-      <span class="version">v1.0 · July 2026</span>
+      <span class="version">v1.0 &middot; July 2026</span>
     </div>
   </div>
 
-  <div class="no-results" id="no-results">No languages match your search.</div>
+  <div class="no-results" id="no-results">No languages match your search. Clear the search to see the full library, or request a new translation below.</div>
+
+  <div class="callouts">
+    <div class="callout">
+      <p class="head">Language not in the library?</p>
+      <p>Obtain a certified translation of the short form from a qualified translator, then submit it to the IRB for approval before using it with any participant.</p>
+    </div>
+    <div class="callout">
+      <p class="head">Questions about the process?</p>
+      <p>Contact the IRB at <a href="mailto:medirb@bu.edu">medirb@bu.edu</a> before enrollment if you are unsure whether your study is approved for the short form process, or which languages your approval covers.</p>
+    </div>
+  </div>
 
   <div class="footer">
-    Office of the IRB · Boston Medical Center / Boston University Medical Campus · <a href="mailto:irb@bu.edu">irb@bu.edu</a>
+    Office of the IRB · Boston Medical Center / Boston University Medical Campus · <a href="mailto:medirb@bu.edu">medirb@bu.edu</a>
   </div>
+
 </div>
 
 <script>
 (function() {
-  // Languages match the actual files in forms/. "search" field adds extra
-  // terms the filter should match beyond the visible label (e.g., Khmer, Persian).
   var langs = [
     { label: "Albanian", native: "Shqip", file: "BMC_ShortForm_Albanian_v1.0_FILLABLE.pdf", search: "" },
     { label: "Amharic", native: "\u12A0\u121B\u122D\u129B", file: "BMC_ShortForm_Amharic_v1.0_FILLABLE.pdf", search: "" },
@@ -134,6 +204,9 @@
   ];
 
   var list = document.getElementById("form-list");
+  var noResults = document.getElementById("no-results");
+  list.appendChild(noResults);
+
   var svgIcon = '<svg class="pdf-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 22"><path fill="#E4E2DE" stroke="#B9B9B9" d="M3.5 1.5h11l6 6v13h-17v-19z"/><path fill="#CFCFCF" stroke="#B9B9B9" d="M14.5 1.5l6 6h-6z"/><rect x="2" y="12" width="16" height="8" rx="1" fill="#CC0000"/><text x="10" y="18.2" font-family="Helvetica,Arial,sans-serif" font-size="5.4" font-weight="700" fill="#FFF" text-anchor="middle" letter-spacing="0.2">PDF</text></svg>';
 
   langs.forEach(function(lang) {
@@ -148,19 +221,15 @@
       '<span class="native-name">' + lang.native + '</span>' +
       '<span class="dot">\u00b7</span>' +
       '<span class="version">v1.0 \u00b7 July 2026</span>';
-    list.appendChild(row);
+    list.insertBefore(row, noResults);
   });
 
   var input = document.getElementById("lang-search");
   var countEl = document.getElementById("search-count");
-  var noResults = document.getElementById("no-results");
-  // +1 for the English reference row, which is markup rather than a langs[] entry.
-  var total = langs.length + 1;
+  var total = langs.length + 1; // +1 for English reference
 
   function updateCount(shown) {
-    // On a no-match search the "No languages match your search." banner carries
-    // the message, so the counter stays quiet rather than repeating it.
-    countEl.textContent = shown === 0 ? "" : "Showing " + shown + " of " + total + " languages";
+    countEl.textContent = shown > 0 ? "Showing " + shown + " of " + total + " languages" : "";
   }
   updateCount(total);
 
@@ -171,7 +240,7 @@
     rows.forEach(function(row) {
       var en = row.getAttribute("data-lang");
       var native_ = row.getAttribute("data-native");
-      var extra = row.getAttribute("data-search");
+      var extra = row.getAttribute("data-search") || "";
       var match = !q || en.indexOf(q) !== -1 || native_.indexOf(q) !== -1 || (extra && extra.indexOf(q) !== -1);
       row.classList.toggle("hidden", !match);
       if (match) shown++;
